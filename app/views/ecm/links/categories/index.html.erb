@@ -1,0 +1,11 @@
+<h1><%= Ecm::Links::Category.model_name.human(:count => :other) %></h1>
+
+<%= nested_li(@link_categories, { :tree_css_class => 'tree unstyled' }) do |c, level| %>
+  <%= c.to_s %>
+  <ul>
+    <% c.ecm_links_links.each do |l| %>
+      <li><%= render l %></li>
+    <% end %>
+  </ul>
+<% end %>
+

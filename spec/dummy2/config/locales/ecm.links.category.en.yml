@@ -1,0 +1,26 @@
+---
+en:
+  activerecord:
+    models:
+      ecm/links/category:
+        one: link category
+        other: link categories
+    attributes:
+      ecm/links/category:
+        name: name
+        ecm_links_links: links
+        ecm_links_links_count: links
+        slug: friendly id
+        created_at: created at
+        short_description: short description
+        updated_at: updated at
+        depth: depth
+        lft: left
+        long_description: long description
+        markup_language: markup language
+        parent_id: parent category
+        locale: language
+        rgt: right
+        link_footer_column: link footer column
+        children: Subcategories
+

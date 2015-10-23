@@ -1,0 +1,9 @@
+en:
+  ecm:
+    links:
+      active_admin:
+        menu: links
+  routes:
+    ecm_links_categories: link-categories
+    ecm_links_links: links
+

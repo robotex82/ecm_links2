@@ -1,0 +1,18 @@
+--- 
+en: 
+  activerecord: 
+    models: 
+      ecm/links/link: 
+        one: link
+        other: links
+    attributes: 
+      ecm/links/link: 
+        position: position
+        name: name
+        created_at: created at
+        updated_at: updated at
+        url: url
+        ecm_links_category: link category
+        ecm_links_category_id: link category
+        markup_language: markup language
+        description: description
