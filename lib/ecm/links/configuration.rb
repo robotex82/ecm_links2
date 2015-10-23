@@ -9,12 +9,24 @@ module Ecm
         yield self
       end
 
-      mattr_accessor :link_footer_columns
+      mattr_accessor :link_footer_columns do
+        4
+      end
 
-      mattr_accessor :link_footer_column_css_classes
+      mattr_accessor :link_footer_column_css_classes do
+        'link-footer-column col-lg-3'
+      end
 
       mattr_accessor :base_controller do
         'ApplicationController'
+      end
+
+      mattr_accessor :default_markup_language do
+        'textile'
+      end
+
+      mattr_accessor :markup_languages do
+        ['textile']
       end
     end
   end

@@ -24,7 +24,7 @@ module Ecm
 
         it { should validate_presence_of(:markup_language) }
 
-        %w(markdown textile rdoc).each do |value|
+        %w(textile).each do |value|
           it { should allow_value(value).for(:markup_language) }
         end
 

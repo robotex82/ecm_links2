@@ -327,6 +327,3 @@ DEPENDENCIES
   thin
   twitter-bootstrap-rails
   yard
-
-BUNDLED WITH
-   1.10.5

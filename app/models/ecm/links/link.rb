@@ -24,8 +24,8 @@ class Ecm::Links::Link < ActiveRecord::Base
   MARKUP_LANGUAGES = %w(markdown textile rdoc)
 
   # validations
-  validates :name, :presence => true, :uniqueness => { :scope => [ :ecm_links_category_id ] }
-  validates :url,  :presence => true, :uniqueness => { :scope => [ :ecm_links_category_id ] }
+  validates :name, :presence => true # , :uniqueness => { :scope => [ :ecm_links_category_id ] }
+  validates :url,  :presence => true # , :uniqueness => { :scope => [ :ecm_links_category_id ] }
   validates :markup_language, :presence  => true,
                               :inclusion => MARKUP_LANGUAGES
 

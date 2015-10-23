@@ -35,7 +35,7 @@ ActiveAdmin.register Ecm::Links::Category do
     end
 
     f.inputs do
-      f.input :markup_language, :as => :select, :collection => Ecm::Links::Category::MARKUP_LANGUAGES
+      f.input :markup_language, :as => :select, :collection => Ecm::Links::Configuration.markup_languages.map(&:to_s)
       f.input :link_footer_column, :as => :select, :collection => (1..Ecm::Links::Configuration.link_footer_columns).to_a
     end
 

@@ -12,9 +12,6 @@ module Ecm
       context "basic validations" do
         it { should validate_presence_of(:name) }
         it { should validate_presence_of(:url) }
-
-        it { should validate_uniqueness_of(:name).scoped_to(:ecm_links_category_id) }
-        it { should validate_uniqueness_of(:url).scoped_to(:ecm_links_category_id) }
       end
 
       context "acts as list" do
@@ -24,7 +21,7 @@ module Ecm
         it { should respond_to(:move_to_bottom) }
       end
 
-      context "acts as markup" do
+      context " markup" do
         subject {
           FactoryGirl.create(:ecm_links_link,
                          :description => "h1. This is a heading"
@@ -33,7 +30,7 @@ module Ecm
 
         it { should validate_presence_of(:markup_language) }
 
-        %w(markdown textile rdoc).each do |value|
+        %w(textile).each do |value|
           it { should allow_value(value).for(:markup_language) }
         end
 
