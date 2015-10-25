@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "awesome_nested_set-tools", '~> 0.0.2'
   s.add_dependency 'friendly_id'
   s.add_dependency 'RedCloth'
+  s.add_dependency 'draper'
 
   s.add_development_dependency "sqlite3"
 

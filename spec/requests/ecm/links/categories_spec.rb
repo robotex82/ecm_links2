@@ -11,20 +11,20 @@ describe 'Ecm::Links::Category requests' do
     @resource_factory_name = @resource_class.to_s.underscore.gsub('/', '_').to_sym
   end # background
 
-#  describe 'show' do
-#    before do
-#      @resource = FactoryGirl.create(@resource_factory_name)
-#      get "/#{@resource_path}/#{@resource.to_param}"
-#    end
+ describe 'show' do
+   before do
+     @resource = FactoryGirl.create(@resource_factory_name)
+     get "/#{@resource_path}/#{@resource.to_param}"
+   end
 
-#    it "request should be successful" do
-#      response.code.should eq("200")
-#    end
+   it "request should be successful" do
+     response.code.should eq("200")
+   end
 
-#    it "render the show template" do
-#      response.should render_template(:show)
-#    end
-#  end
+   it "render the show template" do
+     response.should render_template(:show)
+   end
+ end
 
   describe 'index' do
     before do

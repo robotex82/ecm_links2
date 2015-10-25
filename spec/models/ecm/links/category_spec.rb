@@ -5,6 +5,8 @@ module Ecm
     describe Category do
       subject { FactoryGirl.create(:ecm_links_category) }
 
+      it { should respond_to :human }
+
       context "associations" do
         it { should have_many(:ecm_links_links) }
       end

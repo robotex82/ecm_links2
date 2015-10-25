@@ -8,12 +8,11 @@ module Ecm
       #
       # This will only create the index action for link categories.
       def self.routes(router, options = {})
-        options.reverse_merge!(
-          { :links_category_actions => [ :index ]
-          }
-        )
+        options.reverse_merge!({
+          links_category_actions: [:index, :show]
+        })
 
-        router.resources :ecm_links_categories, :only => options[:links_category_actions], :controller => 'ecm/links/categories'
+        router.resources :ecm_links_categories, only: options[:links_category_actions], :controller => 'ecm/links/categories'
       end
 #      # Creates the routes for links and categories. You can pass options to
 #      # specify the actions for both links and/or categories.

@@ -43,8 +43,12 @@ module Ecm::Links
     validates :markup_language, :presence => true,
                                 :inclusion => Configuration.markup_languages.map(&:to_s)
 
-    def to_s
+    def human
       name
+    end
+
+    def to_s
+      human
     end
 
     def self.for_actual_locale

@@ -11,6 +11,7 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 require 'rails-i18n'
 require 'devise'
+require 'less-rails'
 require 'twitter-bootstrap-rails'
 require "ecm_links2"
 
