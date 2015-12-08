@@ -9,7 +9,7 @@ Ecm::Links.configure do |config|
   #
   # Default: config.link_footer_column_css_classes = %w[ link-footer-column col-lg-3 ]
   #
-  config.link_footer_column_css_classes = %w[ link-footer-column col-lg-3 ]
+  config.link_footer_column_css_classes = %w( link-footer-column col-lg-3 )
 
   # Set the base controller for the contact form
   #
@@ -20,7 +20,7 @@ Ecm::Links.configure do |config|
   # Accepted markup languages
   #
   # default: config.markup_languages = %w[ textile ]
-  config.markup_languages = %w[ textile ]
+  config.markup_languages = %w( textile )
 
   # Default markup language
   #

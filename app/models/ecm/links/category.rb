@@ -4,10 +4,9 @@ module Ecm::Links
   class Category < ActiveRecord::Base
     # associations
     has_many :ecm_links_links, -> { order(:position) },
-             :class_name => Ecm::Links::Link,
-             :dependent => :destroy,
-             :foreign_key => :ecm_links_category_id
-
+             class_name: Ecm::Links::Link,
+             dependent: :destroy,
+             foreign_key: :ecm_links_category_id
 
     # attributes
     attr_accessible :depth,
@@ -22,7 +21,7 @@ module Ecm::Links
                     :rgt,
                     :short_description,
                     :slug if respond_to? :attr_accessible
-    accepts_nested_attributes_for :ecm_links_links, :allow_destroy => true
+    accepts_nested_attributes_for :ecm_links_links, allow_destroy: true
 
     # awesome nested set
     acts_as_nested_set
@@ -33,15 +32,15 @@ module Ecm::Links
 
     # friendly id
     extend FriendlyId
-    friendly_id :name, :use => [:slugged, :finders]
+    friendly_id :name, use: [:slugged, :finders]
 
     # validations
-    validates :locale, :presence => true, :if => Proc.new { |c| c.parent.nil? }
-    validates :locale, :absence => true, :if => Proc.new { |c| !c.parent.nil? }
-    validates :name, :presence => true,
-                     :uniqueness => { :scope => [ :parent_id ] }
-    validates :markup_language, :presence => true,
-                                :inclusion => Configuration.markup_languages.map(&:to_s)
+    validates :locale, presence: true, if: proc { |c| c.parent.nil? }
+    validates :locale, absence: true, if: proc { |c| !c.parent.nil? }
+    validates :name, presence: true,
+                     uniqueness: { scope: [:parent_id] }
+    validates :markup_language, presence: true,
+                                inclusion: Configuration.markup_languages.map(&:to_s)
 
     def human
       name
@@ -52,15 +51,15 @@ module Ecm::Links
     end
 
     def self.for_actual_locale
-      where(:locale => I18n.locale)
+      where(locale: I18n.locale)
     end
 
     def self.for_link_footer
-      where(self.arel_table['link_footer_column'].not_eq(nil)).for_actual_locale
+      where(arel_table['link_footer_column'].not_eq(nil)).for_actual_locale
     end
 
     def long_description(options = {})
-      options.reverse_merge!(:as => :plain)
+      options.reverse_merge!(as: :plain)
       case options[:as]
       when :html
         markup(self[:long_description])
@@ -70,7 +69,7 @@ module Ecm::Links
     end
 
     def short_description(options = {})
-      options.reverse_merge!(:as => :plain)
+      options.reverse_merge!(as: :plain)
       case options[:as]
       when :html
         markup(self[:short_description])
@@ -89,7 +88,7 @@ module Ecm::Links
       when :none
         text
       else
-        raise "Unsupported markup language #{markup_language}"
+        fail "Unsupported markup language #{markup_language}"
       end
     end
 

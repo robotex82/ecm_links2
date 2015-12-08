@@ -1,5 +1,5 @@
-require 'active_admin-acts_as_list'
-require 'active_admin-awesome_nested_set'
+require 'active_admin-acts_as_list' if Gem::Specification.find_all_by_name('activeadmin').any?
+require 'active_admin-awesome_nested_set' if Gem::Specification.find_all_by_name('activeadmin').any?
 require 'acts_as_list'
 require 'awesome_nested_set'
 require 'awesome_nested_set-tools'

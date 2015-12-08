@@ -1,7 +1,24 @@
 = ECM Links 2
 
-= Installation
+= Migrating from 1.x.x to 2.0.0
 
+Add active_admin-awesome_nested_set to your gemfile, if you are using activeadmin:
+
+    # Gemfile
+    gem 'active_admin-acts_as_list'
+    gem 'active_admin-awesome_nested_set'
+
+
+= Prerequisites
+
+if you are using activeadmin as backend, ecm_cms2 comes with admin files to provide a backend. In that case, you'll need active_admin-acts_as_list and active_admin-awesome_nested_set. Add it to your gemfile:
+
+    # Gemfile
+    gem 'active_admin-acts_as_list'
+    gem 'active_admin-awesome_nested_set'
+
+
+= Installation
 
 Add it to your gemfile:
 
@@ -46,6 +63,13 @@ To display a link tree, you have to add the routes:
   Ecm::Links::Routing.routes(self)
 
 This will give you a route to /ecm_links_categories
+
+= Running specs
+
+    gem install bundler
+    bundle
+    cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
+    guard
 
 = License
 
