@@ -1,0 +1,5 @@
+  
+  # ECM Links Frontend Routing
+  localized do
+    Ecm::Links::Routing.routes(self)
+  end
