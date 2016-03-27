@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Link management module for ruby on rails.'
   s.description = 'Link management module for ruby on rails.'
 
-  s.files = Dir['{app,config,db,lib}/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib}/**/*', 'spec/factories/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'rails', '>= 4.0'
   s.add_dependency 'acts_as_list'
