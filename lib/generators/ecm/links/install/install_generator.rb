@@ -2,7 +2,7 @@ module Ecm
   module Links
     module Generators
       class InstallGenerator < Rails::Generators::Base
-        desc 'Generates the intializer'
+        desc 'Generates the initializer'
 
         source_root File.expand_path('../templates', __FILE__)
 

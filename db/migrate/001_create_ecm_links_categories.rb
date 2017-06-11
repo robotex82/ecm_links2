@@ -1,4 +1,4 @@
-class CreateEcmLinksCategories < ActiveRecord::Migration
+class CreateEcmLinksCategories < ActiveRecord::Migration[4.2]
   def change
     create_table :ecm_links_categories do |t|
       t.string :locale

@@ -2,7 +2,7 @@ module Ecm::Links
   class CategoryDecorator < Draper::Decorator
     delegate_all
 
-    def ecm_links_links_count_label
+    def links_count_label
       h.content_tag(:span, ecm_links_links_count, class: 'badge')
     end
 

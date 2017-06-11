@@ -12,7 +12,7 @@ en:
         created_at: created at
         updated_at: updated at
         url: url
-        ecm_links_category: link category
-        ecm_links_category_id: link category
+        category: link category
+        category_id: link category
         markup_language: markup language
         description: description

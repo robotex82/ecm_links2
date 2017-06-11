@@ -8,8 +8,8 @@ de:
     attributes:
       ecm/links/category:
         name: Name
-        ecm_links_links: Links
-        ecm_links_links_count: Links
+        links: Links
+        links_count: Links
         slug: Freundliche ID
         created_at: Erstellt am
         short_description: Kurzbeschreibung

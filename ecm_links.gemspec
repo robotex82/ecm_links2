@@ -32,15 +32,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'devise'
   s.add_development_dependency 'twitter-bootstrap-rails'
 
-  # Active admin
-  s.add_development_dependency 'activeadmin', '~> 1.0.0.pre2'
-  s.add_development_dependency 'therubyracer'
-  s.add_development_dependency 'less-rails'
-  s.add_development_dependency 'sass-rails'
-  s.add_development_dependency 'coffee-rails'
-  s.add_development_dependency 'active_admin-acts_as_list'
-  s.add_development_dependency 'active_admin-awesome_nested_set'
-
   # Tests
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'rspec-rails'

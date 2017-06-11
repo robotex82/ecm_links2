@@ -4,7 +4,7 @@
       <% categories[column + 1].each do |c| %>
         <h4><%= c.name %></h4>
 
-        <% c.ecm_links_links.each do |l| %>
+        <% c.links.each do |l| %>
           <p><%= render partial: 'ecm/links/links/link', locals: { link: l } %></p>
         <% end %>
 

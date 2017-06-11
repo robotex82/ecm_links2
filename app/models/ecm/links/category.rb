@@ -3,25 +3,10 @@ require_dependency 'redcloth'
 module Ecm::Links
   class Category < ActiveRecord::Base
     # associations
-    has_many :ecm_links_links, -> { order(:position) },
-             class_name: Ecm::Links::Link,
-             dependent: :destroy,
-             foreign_key: :ecm_links_category_id
+    has_many :links, -> { order(:position) },
+             dependent: :destroy
 
-    # attributes
-    attr_accessible :depth,
-                    :ecm_links_links_attributes,
-                    :lft,
-                    :link_footer_column,
-                    :locale,
-                    :long_description,
-                    :markup_language,
-                    :name,
-                    :parent_id,
-                    :rgt,
-                    :short_description,
-                    :slug if respond_to? :attr_accessible
-    accepts_nested_attributes_for :ecm_links_links, allow_destroy: true
+    accepts_nested_attributes_for :links, allow_destroy: true
 
     # awesome nested set
     acts_as_nested_set
@@ -76,6 +61,10 @@ module Ecm::Links
       else
         self[:short_description]
       end
+    end
+
+    def links_count
+      links.count
     end
 
     private

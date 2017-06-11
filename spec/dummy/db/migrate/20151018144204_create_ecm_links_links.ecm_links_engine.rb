@@ -1,5 +1,5 @@
 # This migration comes from ecm_links_engine (originally 2)
-class CreateEcmLinksLinks < ActiveRecord::Migration
+class CreateEcmLinksLinks < ActiveRecord::Migration[4.2]
   def change
     create_table :ecm_links_links do |t|
       t.string :name

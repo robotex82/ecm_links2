@@ -1,9 +1,6 @@
 de:
-  ecm:
-    links:
-      active_admin:
-        menu: Links
   routes:
-    ecm_links_categories: link-kategorien
-    ecm_links_links: links
+    ecm_links_engine: links
+    categories: kategorien
+    links: links
 

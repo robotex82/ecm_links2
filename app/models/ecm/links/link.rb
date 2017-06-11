@@ -2,20 +2,12 @@ require_dependency 'redcloth'
 
 class Ecm::Links::Link < ActiveRecord::Base
   # acts as list
-  acts_as_list scope: :ecm_links_category
+  acts_as_list scope: :category
 
   # associations
-  belongs_to :ecm_links_category,
-             class_name: Ecm::Links::Category,
-             counter_cache: :ecm_links_links_count
+  belongs_to :category,
+             optional: true
 
-  # attributes
-  attr_accessible :description,
-                  :ecm_links_category_id,
-                  :markup_language,
-                  :name,
-                  :position,
-                  :url if respond_to? :attr_accessible
 
   # callbacks
   after_initialize :set_defaults
@@ -24,8 +16,8 @@ class Ecm::Links::Link < ActiveRecord::Base
   MARKUP_LANGUAGES = %w(markdown textile rdoc)
 
   # validations
-  validates :name, presence: true # , :uniqueness => { :scope => [ :ecm_links_category_id ] }
-  validates :url,  presence: true # , :uniqueness => { :scope => [ :ecm_links_category_id ] }
+  validates :name, presence: true
+  validates :url,  presence: true
   validates :markup_language, presence: true,
                               inclusion: MARKUP_LANGUAGES
 
