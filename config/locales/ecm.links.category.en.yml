@@ -19,6 +19,7 @@ en:
         long_description: long description
         markup_language: markup language
         parent_id: parent category
+        parent: parent category
         locale: language
         rgt: right
         link_footer_column: link footer column

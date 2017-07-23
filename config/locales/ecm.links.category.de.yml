@@ -18,7 +18,8 @@ de:
         lft: Links
         long_description: Langbeschreibung
         markup_language: Markup Sprache
-        parent_id: Über Kategorie
+        parent: Übergeordnete Kategorie
+        parent_id: Übergeordnete Kategorie
         locale: Sprache
         rgt: Rechts
         link_footer_column: Link Footer Spalte
