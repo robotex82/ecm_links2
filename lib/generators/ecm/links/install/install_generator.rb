@@ -6,14 +6,20 @@ module Ecm
 
         source_root File.expand_path('../templates', __FILE__)
 
+        attr_reader :base_controller_class_name
+
+        def initialize(*args)
+          super
+          @base_controller_class_name = ENV.fetch('BASE_CONTROLLER_CLASS_NAME') { '::FrontendController' }
+        end
+
+
         def generate_initializer
-          copy_file 'initializer.rb', 'config/initializers/ecm_links.rb'
+          template 'initializer.rb', 'config/initializers/ecm_links.rb'
         end
 
         def generate_routes
-          inject_into_file 'config/routes.rb', before: "\nend" do
-            File.read(File.join(File.expand_path('../templates', __FILE__), 'routes.source'))
-          end
+          route File.read(File.join(File.expand_path('../templates', __FILE__), 'routes.source'))
         end
       end
     end

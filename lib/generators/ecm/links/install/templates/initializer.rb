@@ -13,9 +13,9 @@ Ecm::Links.configure do |config|
 
   # Set the base controller for the contact form
   #
-  # Default: config.base_controller = 'ApplicationController'
+  # Default: config.base_controller = '<%= base_controller_class_name %>'
   #
-  config.base_controller = 'ApplicationController'
+  config.base_controller = '<%= base_controller_class_name %>'
 
   # Accepted markup languages
   #
