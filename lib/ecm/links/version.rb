@@ -1,5 +1,5 @@
 module Ecm
   module Links
-    VERSION = '3.0.1'
+    VERSION = '3.1.0'.freeze
   end
 end
