@@ -10,7 +10,7 @@ module Ecm::Links
 
     # awesome nested set
     acts_as_nested_set
-    default_scope { order('lft ASC') }
+    default_scope { order(lft: :asc) }
 
     # callbacks
     after_initialize :set_defaults
